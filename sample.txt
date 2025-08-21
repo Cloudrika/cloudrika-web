@@ -1,0 +1,8 @@
+colors: {
+        cloudBlue: #0798F3,
+        cloudPurple: #9524D6,
+      },
+        backgroundImage: {
+        'cloud-gradient': 'linear-gradient(135deg, #0798F3 0%, #9524D6 100%)',
+        'cloud-gradient-hover': 'linear-gradient(135deg, #067bd9 0%, #7f1bbd 100%)'
+  },
