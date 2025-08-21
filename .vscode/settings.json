@@ -1,6 +1,11 @@
 {
   "tailwindCSS.experimental.configFile": "packages/ui/src/styles/globals.css",
   "cSpell.words": [
-    "turbopack"
+    "Cloudrika",
+    "Khokhar",
+    "Raza",
+    "shadcn",
+    "turbopack",
+    "Turborepo"
   ]
 }
