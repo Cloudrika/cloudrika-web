@@ -36,146 +36,129 @@ storybook/ → Component documentation & testing
   - Storybook story file included  
 
 ---
-
-## ⚙️ Development Setup
-
-1. Clone the repository:
-   ```sh
-   git clone https://github.com/Cloudrika/<repo-name>.git
-   cd <repo-name>
-Install dependencies:
-
-pnpm install
-
+## 🚀 Development
 
 Start development server:
 
 pnpm run dev
 
-
 Build the project:
 
 pnpm build
 
-🔌 Ports
+---
 
-Email Portal: http://localhost:5001
+## 🔌 Ports
 
-Storybook: http://localhost:6006
+Email Portal: http://localhost:5001  
+Storybook: http://localhost:6006  
 
-🎨 Color Palette
+---
 
-The design system uses Cloudrika’s official palette, customizable via Tailwind config. Stick to predefined tokens for consistency.
+## 🎨 Color Palette
+
+The design system uses Cloudrika’s official palette, customizable via Tailwind config.  
+Stick to predefined tokens for consistency.  
+
 (More details will be documented in the Design Guidelines.)
 
-🌳 Branching Strategy
+---
+
+## 🌳 Branching Strategy
 
 We follow a two-branch mainline strategy:
 
-main → stable production-ready code
+- main → stable production-ready code  
+- dev → active development  
 
-dev → active development
+### Branch Naming Conventions
 
-Branch Naming Conventions
+- feature/<name> → for new features  
+  Example: feature/email-editor  
 
-feature/<name> → for new features
+- fix/<name> → for bug fixes  
+  Example: fix/navbar-alignment  
 
-Example: feature/email-editor
+- chore/<name> → for non-feature changes (configs, deps, docs)  
+  Example: chore/update-eslint  
 
-fix/<name> → for bug fixes
+- hotfix/<name> → for urgent fixes on main  
+  Example: hotfix/env-config  
 
-Example: fix/navbar-alignment
+---
 
-chore/<name> → for non-feature changes (configs, deps, docs)
-
-Example: chore/update-eslint
-
-hotfix/<name> → for urgent fixes on main
-
-Example: hotfix/env-config
-
-📝 Commit Guidelines
+## 📝 Commit Guidelines
 
 All commits must use active voice, first form of the verb:
 
-create UI toolbar
-
-update email editor
-
-fix login bug
-
-add CRM dashboard
+✅ Correct:
+- create UI toolbar  
+- update email editor  
+- fix login bug  
+- add CRM dashboard  
 
 ❌ Avoid:
+- created toolbar  
+- fixes bug in login  
+- toolbar updated  
 
-created toolbar
+---
 
-fixes bug in login
+## 🔄 Pull Request Workflow
 
-toolbar updated
+1. Create a branch from dev (using correct naming convention).  
+2. Commit changes with proper commit message style.  
+3. Push your branch to remote.  
+4. Open a Pull Request into dev.  
+   - Assign yourself as the owner.  
+   - Add relevant tags (feature, fix, chore).  
+   - Request reviewers from the team.  
+5. Wait for approval & merge 🚀  
 
-🔄 Pull Request Workflow
+---
 
-Create a branch from dev (using correct naming convention).
+## 📚 Storybook & Components
 
-Commit changes with proper commit message style.
-
-Push your branch to remote.
-
-Open a Pull Request into dev.
-
-Assign yourself as the owner.
-
-Add relevant tags (feature, fix, chore).
-
-Request reviewers from the team.
-
-Wait for approval & merge 🚀.
-
-📚 Storybook & Components
-
-Every new component must include a Storybook file for documentation and testing.
-
-Follow the Button component as a reference for:
-
-Variants
-
-Sizes
-
-Shapes
-
-Accessibility
+- Every new component must include a Storybook file for documentation and testing.  
+- Follow the Button component as a reference for:  
+  - Variants  
+  - Sizes  
+  - Shapes  
+  - Accessibility  
 
 Run Storybook:
 
 pnpm run storybook
 
-✅ Contribution Guidelines
+---
 
-Stick to code readability, maintainability, and scalability.
+## ✅ Contribution Guidelines
 
-Reuse shared packages when possible.
+- Stick to code readability, maintainability, and scalability.  
+- Reuse shared packages when possible.  
+- Respect code reviews and requested changes.  
+- Keep PRs small and focused (avoid huge "mega commits").  
+- Write tests where applicable.  
 
-Respect code reviews and requested changes.
+---
 
-Keep PRs small and focused (avoid huge "mega commits").
+## 📌 Future Roadmap
 
-Write tests where applicable.
+- [ ] Launch Email Portal MVP  
+- [ ] Expand to CRM  
+- [ ] Build POS  
+- [ ] Develop ERP modules  
 
-📌 Future Roadmap
+---
 
- Launch Email Portal MVP
+💙 Join us in building CloudRika’s open-source ecosystem
 
- Expand to CRM
-
- Build POS
-
- Develop ERP modules
-
-Join us in building Cloudrika’s open-source ecosystem 💙
 
 # Meet the Founder
-![https://media.licdn.com/dms/image/v2/D4D03AQGz_HzDeW2CGA/profile-displayphoto-crop_800_800/B4DZe9tYzZHAAI-/0/1751234484733?e=1758758400&v=beta&t=rdA6RjY_TdUBTyvzX5jtP9ncICfBIzaBV5LvZ4AB79g]
+<a href="https://www.linkedin.com/in/ahmad-raza-khokhar">
+  <img src="https://media.licdn.com/dms/image/v2/D4D03AQGz_HzDeW2CGA/profile-displayphoto-crop_800_800/B4DZe9tYzZHAAI-/0/1751234484733?e=1758758400&v=beta&t=rdA6RjY_TdUBTyvzX5jtP9ncICfBIzaBV5LvZ4AB79g" alt="Ahmad Raza Khokhar" width="320" />
+</a>
+
 # Ahmad Raza Khokhar
 ## Sr Software Engineer | Web | Mobile | Chrome Extension | Full Stack
 
