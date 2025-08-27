@@ -1,0 +1,233 @@
+@import "tailwindcss";
+
+/* 1. DEFINE CORE COLOR PALETTE (The Single Source of Truth) */
+:root {
+    --primary: rgb(7, 152, 243);
+    --primary-10: rgb(23, 162, 245);
+    --primary-20: rgb(39, 172, 247);
+    --primary-30: rgb(55, 182, 249);
+    --primary-40: rgb(71, 192, 251);
+    --primary-50: rgb(87, 202, 253);
+    --primary-60: rgb(103, 212, 255);
+    --primary-70: rgb(119, 222, 255);
+    --primary-80: rgb(135, 232, 255);
+    --primary-90: rgb(151, 242, 255);
+
+    /* Primary Inverse Colors */
+    --primary-inverse: rgb(149, 36, 214);
+    --primary-inverse-10: rgb(159, 56, 217);
+    --primary-inverse-20: rgb(169, 76, 220);
+    --primary-inverse-30: rgb(179, 96, 223);
+    --primary-inverse-40: rgb(189, 116, 226);
+    --primary-inverse-50: rgb(199, 136, 229);
+    --primary-inverse-60: rgb(209, 156, 232);
+    --primary-inverse-70: rgb(219, 176, 235);
+    --primary-inverse-80: rgb(229, 196, 238);
+    --primary-inverse-90: rgb(239, 216, 241);
+
+    /* Neutral Colors */
+    --neutral-white: rgb(255, 255, 255);
+    --neutral-10: rgb(249, 250, 251);
+    --neutral-20: rgb(243, 244, 246);
+    --neutral-30: rgb(229, 231, 235);
+    --neutral-40: rgb(209, 213, 219);
+    --neutral-50: rgb(156, 163, 175);
+    --neutral-60: rgb(107, 114, 128);
+    --neutral-70: rgb(75, 85, 99);
+    --neutral-80: rgb(55, 65, 81);
+    --neutral-90: rgb(31, 41, 55);
+    --neutral-black: rgb(0, 0, 0);
+
+    /* Success Colors */
+    --success: rgb(16, 185, 129);
+    --success-10: rgb(34, 197, 144);
+    --success-20: rgb(52, 211, 153);
+    --success-30: rgb(110, 231, 183);
+    --success-40: rgb(167, 243, 208);
+    --success-50: rgb(209, 250, 229);
+
+    /* Error Colors */
+    --error: rgb(239, 68, 68);
+    --error-10: rgb(248, 113, 113);
+    --error-20: rgb(252, 165, 165);
+    --error-30: rgb(254, 202, 202);
+    --error-40: rgb(254, 226, 226);
+    --error-50: rgb(255, 241, 242);
+
+    /* Warning Colors */
+    --warning: rgb(245, 158, 11);
+    --warning-10: rgb(251, 191, 36);
+    --warning-20: rgb(253, 224, 71);
+    --warning-30: rgb(254, 243, 199);
+    --warning-40: rgb(255, 251, 235);
+    --warning-50: rgb(255, 255, 240);
+
+    /* Info Colors */
+    --info: rgb(59, 130, 246);
+    --info-10: rgb(96, 165, 250);
+    --info-20: rgb(147, 197, 253);
+    --info-30: rgb(191, 219, 254);
+    --info-40: rgb(219, 234, 254);
+    --info-50: rgb(239, 246, 255);
+}
+
+/* 2. DEFINE LIGHT THEME (Semantic application of the core palette) */
+.light {
+    /*  Gradients */
+    --primary-gradient: linear-gradient(to right, var(--primary), var(--primary-inverse));
+    --primary-gradient-reverse: linear-gradient(to right, var(--primary-inverse), var(--primary));
+    --primary-gradient-curve: radial-gradient(70% 100% at 50% 0, transparent 64% var(--primary) 65%);
+    --primary-gradient-curve-reverse: radial-gradient(70% 100% at 50% 0, transparent 64% var(--primary-inverse) 65%);
+
+    /* Surfaces */
+    --surface-primary: var(--neutral-white);
+    --surface-secondary: var(--neutral-30);
+    --surface-tertiary: var(--neutral-40);
+
+    /* Borders */
+    --border-brand: var(--primary);
+    --border-brand-hovered: var(--primary-20);
+    --border-brand-active: var(--primary-40);
+    --border-brand-disabled: var(--neutral-20);
+    --border-brand-inverse: var(--primary-inverse);
+    --border-brand-inverse-hovered: var(--primary-inverse-20);
+    --border-brand-inverse-active: var(--primary-inverse-40);
+    --border-brand-inverse-disabled: var(--neutral-20);
+    --border-success: var(--success);
+    --border-success-hovered: var(--success-20);
+    --border-success-active: var(--success-40);
+    --border-success-disabled: var(--neutral-20);
+    --border-error: var(--error);
+    --border-error-hovered: var(--error-20);
+    --border-error-active: var(--error-40);
+    --border-error-disabled: var(--neutral-20);
+    --border-warning: var(--warning);
+    --border-warning-hovered: var(--warning-20);
+    --border-warning-active: var(--warning-40);
+    --border-warning-disabled: var(--neutral-20);
+
+    /* Content */
+    --content-primary: var(--neutral-black);
+    --content-secondary: var(--neutral-70);
+    --content-tertiary: var(--neutral-60);
+    --content-disabled: var(--neutral-40);
+    --content-inverse-primary: var(--neutral-white);
+    --content-inverse-secondary: var(--neutral-20);
+    --content-inverse-tertiary: var(--neutral-30);
+    --content-inverse-disabled: var(--neutral-50);
+    --content-brand: var(--primary);
+    --content-brand-hovered: var(--primary-20);
+    --content-brand-active: var(--primary-40);
+    --content-brand-disabled: var(--primary-60);
+    --content-brand-inverse: var(--primary-inverse);
+    --content-brand-inverse-hovered: var(--primary-inverse-20);
+    --content-brand-inverse-active: var(--primary-inverse-40);
+    --content-brand-inverse-disabled: var(--primary-inverse-60);
+    --content-success: var(--success);
+    --content-success-hovered: var(--success-20);
+    --content-success-active: var(--success-40);
+    --content-success-disabled: var(--success-50);
+    --content-error: var(--error);
+    --content-error-hovered: var(--error-20);
+    --content-error-active: var(--error-40);
+    --content-error-disabled: var(--error-50);
+    --content-warning: var(--warning);
+    --content-warning-hovered: var(--warning-20);
+    --content-warning-active: var(--warning-40);
+    --content-warning-disabled: var(--warning-50);
+
+    /* Bg Fill Colors  */
+    --bg-fill-primary: var(--primary);
+    --bg-fill-primary-hover: var(--primary-20);
+    --bg-fill-primary-active: var(--primary-40);
+    --bg-fill-primary-disabled: var(--neutral-20);
+
+    --bg-fill-secondary: var(--neutral-30);
+    --bg-fill-secondary-hover: var(--neutral-40);
+
+    --bg-surface-critical: var(--error-50);
+    --bg-fill-critical: var(--error);
+    --bg-fill-critical-hover: var(--error-10);
+}
+
+
+/* 3. DEFINE DARK THEME (A different semantic application of the same core palette) */
+.dark {
+
+    /* Gradients */
+    --primary-gradient: linear-gradient(to right, var(--primary-20), var(--primary-inverse-30));
+    --primary-gradient-reverse: linear-gradient(to right, var(--primary-inverse-30), var(--primary-20));
+    --primary-gradient-curve: radial-gradient(70% 100% at 50% 0, transparent 64% var(--primary-20) 65%);
+    --primary-gradient-curve-reverse: radial-gradient(70% 100% at 50% 0, transparent 64% var(--primary-inverse-30) 65%);
+
+    /* Surfaces */
+    --surface-primary: var(--neutral-90);
+    --surface-secondary: var(--neutral-80);
+    --surface-tertiary: var(--neutral-70);
+
+    /* Borders */
+    --border-brand: var(--primary-40);
+    --border-brand-hovered: var(--primary-60);
+    --border-brand-active: var(--primary-80);
+    --border-brand-disabled: var(--neutral-60);
+    --border-brand-inverse: var(--primary-inverse-40);
+    --border-brand-inverse-hovered: var(--primary-inverse-60);
+    --border-brand-inverse-active: var(--primary-inverse-80);
+    --border-brand-inverse-disabled: var(--neutral-60);
+    --border-success: var(--success-30);
+    --border-success-hovered: var(--success-40);
+    --border-success-active: var(--success-50);
+    --border-success-disabled: var(--neutral-60);
+    --border-error: var(--error-30);
+    --border-error-hovered: var(--error-40);
+    --border-error-active: var(--error-50);
+    --border-error-disabled: var(--neutral-60);
+    --border-warning: var(--warning-30);
+    --border-warning-hovered: var(--warning-40);
+    --border-warning-active: var(--warning-50);
+    --border-warning-disabled: var(--neutral-60);
+
+    /* Content */
+    --content-primary: var(--neutral-white);
+    --content-secondary: var(--neutral-20);
+    --content-tertiary: var(--neutral-30);
+    --content-disabled: var(--neutral-50);
+    --content-inverse-primary: var(--neutral-black);
+    --content-inverse-secondary: var(--neutral-80);
+    --content-inverse-tertiary: var(--neutral-70);
+    --content-inverse-disabled: var(--neutral-60);
+    --content-brand: var(--primary-20);
+    --content-brand-hovered: var(--primary-40);
+    --content-brand-active: var(--primary-60);
+    --content-brand-disabled: var(--primary-80);
+    --content-brand-inverse: var(--primary-inverse-20);
+    --content-brand-inverse-hovered: var(--primary-inverse-40);
+    --content-brand-inverse-active: var(--primary-inverse-60);
+    --content-brand-inverse-disabled: var(--primary-inverse-80);
+    --content-success: var(--success-10);
+    --content-success-hovered: var(--success-30);
+    --content-success-active: var(--success-50);
+    --content-success-disabled: var(--success);
+    --content-error: var(--error-10);
+    --content-error-hovered: var(--error-30);
+    --content-error-active: var(--error-50);
+    --content-error-disabled: var(--error);
+    --content-warning: var(--warning-10);
+    --content-warning-hovered: var(--warning-30);
+    --content-warning-active: var(--warning-50);
+    --content-warning-disabled: var(--warning);
+
+    /* BG Fill Colors */
+    --bg-fill-primary: var(--primary-40);
+    --bg-fill-primary-hover: var(--primary-60);
+    --bg-fill-primary-active: var(--primary-80);
+    --bg-fill-primary-disabled: var(--neutral-60);
+
+    --bg-fill-secondary: var(--neutral-80);
+    --bg-fill-secondary-hover: var(--neutral-70);
+    /* ... etc. Map all your new 'fill' and 'surface' variables here for the dark theme */
+
+    --bg-surface-critical: var(--error-40);
+    --bg-fill-critical: var(--error-10);
+    --bg-fill-critical-hover: var(--error-20);
+}
