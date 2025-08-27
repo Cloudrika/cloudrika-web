@@ -24,7 +24,6 @@ export default function Page() {
         <div className="text-primary-inverse  "
           style={{ backgroundColor: 'var(--info)' }}
         >Your custom primary</div>
-        <div className="debug-test">Your custom primary-inverse</div>
       </div>
       {/* <EditorContent editor={editor} className="w-[80%] bg-gray-300" /> */}
     </div>
