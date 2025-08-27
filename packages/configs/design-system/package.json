@@ -1,0 +1,13 @@
+{
+    "name": "@workspace/design-system",
+    "private": true,
+    "exports": {
+        "./design-tokens.css": "./design-tokens.css"
+    },
+    "files": [
+        "./**"
+    ],
+    "devDependencies": {
+        "tailwindcss": "^4.1.11"
+    }
+}
