@@ -1,0 +1,8 @@
+@import "../../../packages/configs/design-system/design-tokens.css";
+@import "../../../packages/ui/src/styles/globals.css";
+
+.debug-test {
+    background-color: yellow !important;
+    padding: 20px;
+    color: black;
+}
