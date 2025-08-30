@@ -1,9 +1,11 @@
 "use client"
+
 import { Button } from "@workspace/ui/components/button";
+import { cn } from "@workspace/ui/lib/utils";
 import { useTheme } from "next-themes";
 
 export default function Page() {
-  const { setTheme } = useTheme()
+  const { setTheme, theme } = useTheme()
   return (
     <div className="flex items-center justify-center min-h-svh">
       <div className="flex flex-col items-center justify-center gap-4">
@@ -12,16 +14,21 @@ export default function Page() {
         >Hello World</h1>
         <Button
           shape="rect"
-          size="default"
-          variant="default"
+          size="xs"
+          variant="primary"
+          className={cn("w-52"
+          )}
           onClick={() => {
             setTheme((prev) => prev === "light" ? "dark" : "light")
           }}
+          asChild
         >
-          Click Me
+
+          <div>   Click Me
+          </div>
         </Button>
         <div className="text-shadow-content-primary text-content-secondary text-shadow-2xs">Basic Tailwind</div>
-        <div className="text-primary-inverse  "
+        <div className="text-primary-inverse"
           style={{ backgroundColor: 'var(--info)' }}
         >Your custom primary</div>
       </div>
