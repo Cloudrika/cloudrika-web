@@ -37,3 +37,6 @@ npm-debug.log*
 
 *storybook.log
 storybook-static
+
+#else
+sample.txt
