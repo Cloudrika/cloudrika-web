@@ -1,195 +1,170 @@
-Cloudrika Monorepo
+# Cloudrika Monorepo
 
-Welcome to the Cloudrika Open Source Monorepo 🎉
+Welcome to the **Cloudrika Monorepo** 👋  
 
-Cloudrika’s vision is to build modern, scalable, and open-source web applications that empower businesses around the world.
-This repository serves as the foundation for multiple products such as:
+Cloudrika is on a mission to build scalable, modern, and open-source web applications that empower businesses and developers.  
+This monorepo will host multiple projects such as:  
 
-📧 Email Portal (currently under active development)
+- **Email Portal** (current focus 🚀)  
+- CRM  
+- POS  
+- ERP  
+- and more upcoming products...  
 
-📊 CRM (upcoming)
+We believe in collaboration and invite developers to contribute to our ecosystem. This repository is designed to be **scalable, maintainable, and developer-friendly** using **Turborepo**, **pnpm**, and modern UI practices with **shadcn/ui**, **TailwindCSS**, **Radix UI**, and **Storybook**.
 
-🛒 POS (planned)
+---
 
-🏢 ERP (planned)
+## 🌍 Links
 
-The monorepo provides a shared set of components, utilities, and best practices that will be used across all Cloudrika applications.
+- **Website:** [https://Cloudrika.com](https://Cloudrika.com/)  
+- **LinkedIn:** [Cloudrika Technologies](https://www.linkedin.com/company/Cloudrika-technologies)
 
-🚀 Tech Stack
+---
 
-Turborepo
- – for monorepo management
+## 📂 Repository Structure
+apps/ → Next.js applications (Email Portal, etc.)
+packages/ → Shared UI components, utilities, hooks
+storybook/ → Component documentation & testing
 
-pnpm
- – fast package manager
+- Each **UI component** inside `packages/` must follow the **Button component** structure:  
+  - Variants  
+  - Sizes  
+  - Shapes  
+  - `cn`, `cva` usage with TailwindCSS  
+  - Radix UI for accessibility  
+  - Storybook story file included  
 
-Next.js
- – application framework
+---
+## 🚀 Development
 
-Tailwind CSS
- – utility-first CSS framework
+Start development server:
 
-shadcn/ui
- – prebuilt UI components
-
-Radix UI
- – accessible primitives
-
-Storybook
- – component development environment
-
-⚡ Getting Started
-1. Clone & Install
-git clone https://github.com/cloudrika/cloudrika.git
-cd cloudrika
-pnpm install
-
-2. Run Development
 pnpm run dev
 
-3. Build
+Build the project:
+
 pnpm build
 
-🌐 Ports
+---
 
-Email Portal → http://localhost:5001
+## 🔌 Ports
 
-Storybook → http://localhost:6006
+Email Portal: http://localhost:5001  
+Storybook: http://localhost:6006  
 
-🎨 Design System
+---
 
-We use a shared design system across all products:
+## 🎨 Color Palette
 
-Color Palette: defined in tailwind.config.js
+The design system uses Cloudrika’s official palette, customizable via Tailwind config.  
+Stick to predefined tokens for consistency.  
 
-Components: built with shadcn/ui + Radix UI
+(More details will be documented in the Design Guidelines.)
 
-Variants, Sizes, Shapes: implemented via cva + cn utility
+---
 
-Example Reference: follow the Button component in packages/ui
+## 🌳 Branching Strategy
 
-Every new component must include a Storybook story for documentation and testing.
+We follow a two-branch mainline strategy:
 
-🔀 Branching Strategy
+- main → stable production-ready code  
+- dev → active development  
 
-We follow a two-branch model:
+### Branch Naming Conventions
 
-main → production-ready, stable code
+- feature/<name> → for new features  
+  Example: feature/email-editor  
 
-dev → active development
+- fix/<name> → for bug fixes  
+  Example: fix/navbar-alignment  
 
-Branch Naming Conventions
+- chore/<name> → for non-feature changes (configs, deps, docs)  
+  Example: chore/update-eslint  
 
-Use prefixes for clarity:
+- hotfix/<name> → for urgent fixes on main  
+  Example: hotfix/env-config  
 
-feature/<name> → new features
+---
 
-fix/<name> → bug fixes
+## 📝 Commit Guidelines
 
-chore/<name> → maintenance / config updates
+All commits must use active voice, first form of the verb:
 
-docs/<name> → documentation updates
+✅ Correct:
+- create UI toolbar  
+- update email editor  
+- fix login bug  
+- add CRM dashboard  
 
-Examples:
+❌ Avoid:
+- created toolbar  
+- fixes bug in login  
+- toolbar updated  
 
-feature/email-editor
+---
 
-fix/login-validation
+## 🔄 Pull Request Workflow
 
-chore/update-dependencies
+1. Create a branch from dev (using correct naming convention).  
+2. Commit changes with proper commit message style.  
+3. Push your branch to remote.  
+4. Open a Pull Request into dev.  
+   - Assign yourself as the owner.  
+   - Add relevant tags (feature, fix, chore).  
+   - Request reviewers from the team.  
+5. Wait for approval & merge 🚀  
 
-✅ Contribution Workflow
+---
 
-Create a branch from dev.
+## 📚 Storybook & Components
 
-Implement changes following coding & component guidelines.
+- Every new component must include a Storybook file for documentation and testing.  
+- Follow the Button component as a reference for:  
+  - Variants  
+  - Sizes  
+  - Shapes  
+  - Accessibility  
 
-Commit messages should use active voice + present tense:
+Run Storybook:
 
-create UI toolbar
+pnpm run storybook
 
-update email editor
+---
 
-fix login validation
+## ✅ Contribution Guidelines
 
-add story for modal component
+- Stick to code readability, maintainability, and scalability.  
+- Reuse shared packages when possible.  
+- Respect code reviews and requested changes.  
+- Keep PRs small and focused (avoid huge "mega commits").  
+- Write tests where applicable.  
 
-Push branch and open a Pull Request (PR) against dev.
+---
 
-Assign yourself as the assignee.
+## 📌 Future Roadmap
 
-Request reviewers from maintainers.
+- [ ] Launch Email Portal MVP  
+- [ ] Expand to CRM  
+- [ ] Build POS  
+- [ ] Develop ERP modules  
 
-Once approved, PRs are merged into dev.
+---
 
-🔒 Only maintainers merge into main.
+💙 Join us in building CloudRika’s open-source ecosystem
 
-📝 Commit Message Guidelines
 
-Use first form of verb (create, update, fix, add, remove).
+# Meet the Founder
+<a href="https://www.linkedin.com/in/ahmad-raza-khokhar">
+  <img src="https://media.licdn.com/dms/image/v2/D4D03AQGz_HzDeW2CGA/profile-displayphoto-crop_800_800/B4DZe9tYzZHAAI-/0/1751234484733?e=1758758400&v=beta&t=rdA6RjY_TdUBTyvzX5jtP9ncICfBIzaBV5LvZ4AB79g" alt="Ahmad Raza Khokhar" width="320" />
+</a>
 
-Keep it short, clear, and descriptive.
-
-Think: “When this PR is merged, it will…”
-
-Examples:
-
-create email composer UI
-
-update subscription plan logic
-
-fix contact import bug
-
-📚 Component Guidelines
-
-Components live in packages/ui
-
-Follow the Button component structure as a reference (variants, sizes, shapes).
-
-Always use cva and cn utilities for styling consistency.
-
-Every component must include:
-
-A Storybook story
-
-Proper props typing
-
-Usage examples
-
-🤝 Contributing
-
-We welcome contributions from the community 💙
-
-Open an issue for discussion before starting large features.
-
-Follow the branching and commit guidelines strictly.
-
-Respect code reviews and suggestions from maintainers.
-
-📌 Roadmap
-
-✅ Email Portal MVP
-
-⏳ CRM module
-
-⏳ POS module
-
-⏳ ERP system
-
-📄 License
-
-This project is open source and available under the MIT License.
-
-Meet the Founder
-
-![https://media.licdn.com/dms/image/v2/D4D03AQGz_HzDeW2CGA/profile-displayphoto-crop_800_800/B4DZe9tYzZHAAI-/0/1751234484733?e=1758758400&v=beta&t=rdA6RjY_TdUBTyvzX5jtP9ncICfBIzaBV5LvZ4AB79g]
-
-Ahmad Raza Khokhar
-Sr Software Engineer | Web | Mobile | Chrome Extensions | Full Stack
+# Ahmad Raza Khokhar
+## Sr Software Engineer | Web | Mobile | Chrome Extension | Full Stack
 
 Ahmad is a full-stack developer with expertise in React.js, Next.js, React Native, and TypeScript. With a strong emphasis on scalability, maintainability, and code readability, Ahmad has built applications that serve millions of users worldwide.
 
-His backend skills include Express.js and Nest.js, all crafted in TypeScript to ensure robust, high-performance solutions.
+His backend skills include Express.js and Next.js, all crafted in TypeScript to ensure robust, high-performance solutions.
 
 Connect with Ahmad on [GitHub](https://github.com/AhmadRazaKhokhar1)
  and [LinkedIn](https://www.linkedin.com/in/ahmad-raza-khokhar/)
