@@ -225,7 +225,6 @@
 
     --bg-fill-secondary: var(--neutral-80);
     --bg-fill-secondary-hover: var(--neutral-70);
-    /* ... etc. Map all your new 'fill' and 'surface' variables here for the dark theme */
 
     --bg-surface-critical: var(--error-40);
     --bg-fill-critical: var(--error-10);

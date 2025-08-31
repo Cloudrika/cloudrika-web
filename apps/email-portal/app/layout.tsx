@@ -1,7 +1,10 @@
-import "./globals.css"
+import "@workspace/styles/globals.css"
 import { Geist, Geist_Mono } from "next/font/google"
 
 import { Providers } from "@/lib/providers"
+import { SidebarTrigger } from "@workspace/ui/components"
+import { EmailPortalDashboardSideBar } from "@/lib/layouts/dashboard/side-bar"
+
 
 const fontSans = Geist({
   subsets: ["latin"],
@@ -23,7 +26,10 @@ export default function RootLayout({
       <body
         className={`${fontSans.variable} ${fontMono.variable} font-sans antialiased `}
       >
-        <Providers>{children}</Providers>
+        <Providers>
+          <SidebarTrigger />
+          <EmailPortalDashboardSideBar />
+          {children}</Providers>
       </body>
     </html>
   )
