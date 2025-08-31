@@ -1,6 +1,7 @@
 // Button.stories.tsx
 import type { Meta, StoryObj } from "@storybook/react";
 import { Button } from ".";
+import { BUTTON_SHAPES, BUTTON_SIZES, BUTTON_VARIANTS } from "./button.utils";
 
 
 const meta: Meta<typeof Button> = {
@@ -10,15 +11,15 @@ const meta: Meta<typeof Button> = {
     argTypes: {
         variant: {
             control: "select",
-            options: ["default", "destructive", "outline", "secondary", "ghost", "link"],
+            options: Object.keys(BUTTON_VARIANTS),
         },
         size: {
             control: "select",
-            options: ["default", "sm", "lg", "icon"],
+            options: Object.keys(BUTTON_SIZES),
         },
         shape: {
             control: "select",
-            options: ["rect", "pill"],
+            options: Object.keys(BUTTON_SHAPES),
         },
         asChild: {
             control: "boolean",
@@ -29,12 +30,12 @@ const meta: Meta<typeof Button> = {
 export default meta;
 type Story = StoryObj<typeof Button>;
 
-// Default button
-export const Default: Story = {
+// Primary button
+export const Primary: Story = {
     args: {
-        children: "Click Me",
-        variant: "default",
-        size: "default",
+        children: "Primary",
+        variant: "primary",
+        size: "md",
         shape: "rect",
     },
 };

@@ -1,5 +1,5 @@
 "use client"
-import { Button } from "@workspace/ui/components/button";
+import { Button } from "@workspace/ui/components";
 import { useTheme } from "next-themes";
 
 export default function Page() {
@@ -12,8 +12,8 @@ export default function Page() {
         >Hello World</h1>
         <Button
           shape="rect"
-          size="default"
-          variant="default"
+          variant="primary"
+          size="md"
           onClick={() => {
             setTheme((prev) => prev === "light" ? "dark" : "light")
           }}

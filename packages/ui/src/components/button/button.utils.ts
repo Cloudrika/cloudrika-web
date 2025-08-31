@@ -1,7 +1,7 @@
 import { cva } from "class-variance-authority";
 
 export const BUTTON_VARIANTS = {
-    default:
+    primary:
         "bg-primary text-primary-foreground shadow-xs hover:bg-primary/90",
     destructive:
         "bg-destructive text-white shadow-xs hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60",
@@ -15,8 +15,8 @@ export const BUTTON_VARIANTS = {
 }
 
 export const BUTTON_SIZES = {
-    default: "h-9 px-4 py-2 has-[>svg]:px-3",
     sm: "h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5",
+    md: "h-9 px-4 py-2 has-[>svg]:px-3",
     lg: "h-10 rounded-md px-6 has-[>svg]:px-4",
     icon: "size-9",
 }
@@ -36,8 +36,8 @@ export const buttonVariants = cva(
             shape: BUTTON_SHAPES
         },
         defaultVariants: {
-            variant: "default",
-            size: "default",
+            variant: "primary",
+            size: "md",
             shape: "rect"
         },
     }
