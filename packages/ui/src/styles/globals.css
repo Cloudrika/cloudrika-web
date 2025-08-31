@@ -1,39 +1,502 @@
 @import "tailwindcss";
-@source "../../../apps/**/*.{ts,tsx}";
-@source "../../../components/**/*.{ts,tsx}";
-@source "../**/*.{ts,tsx}";
-@import "../../../configs/design-system/design-tokens.css";
+@source "@/apps/**/*.{ts,tsx}";
+@source "@/components/**/*.{ts,tsx,story,story.ts}";
+@source "../**/*.{ts,tsx,story,story.ts}";
+@import "@workspace/design-system/design-tokens.css";
 @import "tw-animate-css";
 
-/* Your existing CSS custom properties */
-:root {
-    --primary: #0798f3;
-    --primary-inverse: #9524d6;
-    /* ... all your other custom properties */
-}
-
-/* Define Tailwind theme using CSS */
+/* ============================================================================
+   TAILWIND V4 THEME CONFIGURATION
+   ============================================================================ */
 @theme {
-    /* Map your semantic tokens to Tailwind utilities */
+    /* Colors mapped to Tailwind utilities */
     --color-primary: var(--primary);
-    --color-primary-inverse: var(--primary-inverse);
+    --color-primary-hover: var(--primary-hover);
+    --color-primary-active: var(--primary-active);
+    --color-primary-subtle: var(--primary-subtle);
+    --color-primary-foreground: var(--primary-foreground);
 
-    /* Surface colors that change with theme */
+    --color-secondary: var(--secondary);
+    --color-secondary-hover: var(--secondary-hover);
+    --color-secondary-active: var(--secondary-active);
+    --color-secondary-subtle: var(--secondary-subtle);
+    --color-secondary-foreground: var(--secondary-foreground);
+
+    --color-success: var(--success);
+    --color-success-hover: var(--success-hover);
+    --color-success-active: var(--success-active);
+    --color-success-subtle: var(--success-subtle);
+    --color-success-foreground: var(--success-foreground);
+
+    --color-error: var(--error);
+    --color-error-hover: var(--error-hover);
+    --color-error-active: var(--error-active);
+    --color-error-subtle: var(--error-subtle);
+    --color-error-foreground: var(--error-foreground);
+
+    --color-warning: var(--warning);
+    --color-warning-hover: var(--warning-hover);
+    --color-warning-active: var(--warning-active);
+    --color-warning-subtle: var(--warning-subtle);
+    --color-warning-foreground: var(--warning-foreground);
+
+    --color-info: var(--info);
+    --color-info-hover: var(--info-hover);
+    --color-info-active: var(--info-active);
+    --color-info-subtle: var(--info-subtle);
+    --color-info-foreground: var(--info-foreground);
+
+    /* Background & Surface Colors */
+    --color-background: var(--background);
+    --color-background-secondary: var(--background-secondary);
+    --color-background-tertiary: var(--background-tertiary);
+    --color-background-elevated: var(--background-elevated);
+    --color-background-overlay: var(--background-overlay);
+    --color-background-glass: var(--background-glass);
+
+    --color-surface: var(--surface);
     --color-surface-primary: var(--surface-primary);
     --color-surface-secondary: var(--surface-secondary);
+    --color-surface-tertiary: var(--surface-tertiary);
+    --color-surface-elevated: var(--surface-elevated);
+    --color-surface-sunken: var(--surface-sunken);
+    --color-surface-inverse: var(--surface-inverse);
 
-    /* Content colors that change with theme */
+    /* Content Colors */
+    --color-foreground: var(--foreground);
     --color-content-primary: var(--content-primary);
     --color-content-secondary: var(--content-secondary);
+    --color-content-tertiary: var(--content-tertiary);
+    --color-content-quaternary: var(--content-quaternary);
+    --color-content-disabled: var(--content-disabled);
+    --color-content-inverse: var(--content-inverse);
+    --color-content-on-brand: var(--content-on-brand);
 
-    /* Button-specific colors for your component */
-    --color-primary-foreground: var(--content-inverse-primary);
-    --color-destructive: var(--error);
-    --color-secondary: var(--bg-fill-secondary);
-    --color-secondary-foreground: var(--content-primary);
-    --color-background: var(--surface-primary);
-    --color-accent: var(--bg-fill-secondary);
-    --color-accent-foreground: var(--content-primary);
-    --color-input: var(--neutral-30);
-    --color-ring: var(--primary);
+    /* Border Colors */
+    --color-border: var(--border);
+    --color-border-subtle: var(--border-subtle);
+    --color-border-strong: var(--border-strong);
+    --color-border-inverse: var(--border-inverse);
+    --color-border-primary: var(--border-primary);
+    --color-border-secondary: var(--border-secondary);
+    --color-border-success: var(--border-success);
+    --color-border-error: var(--border-error);
+    --color-border-warning: var(--border-warning);
+    --color-border-info: var(--border-info);
+
+    /* Interactive Colors */
+    --color-interactive: var(--interactive);
+    --color-interactive-hover: var(--interactive-hover);
+    --color-interactive-active: var(--interactive-active);
+    --color-interactive-disabled: var(--interactive-disabled);
+    --color-interactive-subtle: var(--interactive-subtle);
+
+    /* Component Colors */
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-destructive: var(--destructive);
+    --color-destructive-foreground: var(--destructive-foreground);
+
+    /* Input Colors */
+    --color-input: var(--input);
+    --color-input-foreground: var(--input-foreground);
+    --color-input-placeholder: var(--input-placeholder);
+
+    /* Ring Colors */
+    --color-ring: var(--ring);
+    --color-ring-offset: var(--ring-offset);
+    --color-focus-ring: var(--focus-ring);
+    --color-focus-ring-offset: var(--focus-ring-offset);
+
+    /* Selection */
+    --color-selection: var(--selection);
+
+    /* Chart Colors */
+    --color-chart-1: var(--chart-1);
+    --color-chart-2: var(--chart-2);
+    --color-chart-3: var(--chart-3);
+    --color-chart-4: var(--chart-4);
+    --color-chart-5: var(--chart-5);
+    --color-chart-6: var(--chart-6);
+    --color-chart-7: var(--chart-7);
+    --color-chart-8: var(--chart-8);
+    --color-chart-9: var(--chart-9);
+    --color-chart-10: var(--chart-10);
+
+    /* Cloud Theme Specific */
+    --color-cloud-blue: var(--cloud-blue);
+    --color-cloud-purple: var(--cloud-purple);
+
+    /* Alpha Variants */
+    --color-black-alpha-5: var(--black-alpha-5);
+    --color-black-alpha-10: var(--black-alpha-10);
+    --color-black-alpha-15: var(--black-alpha-15);
+    --color-black-alpha-20: var(--black-alpha-20);
+    --color-black-alpha-25: var(--black-alpha-25);
+    --color-black-alpha-30: var(--black-alpha-30);
+    --color-black-alpha-40: var(--black-alpha-40);
+    --color-black-alpha-50: var(--black-alpha-50);
+    --color-black-alpha-60: var(--black-alpha-60);
+    --color-black-alpha-70: var(--black-alpha-70);
+    --color-black-alpha-80: var(--black-alpha-80);
+    --color-black-alpha-90: var(--black-alpha-90);
+
+    --color-white-alpha-5: var(--white-alpha-5);
+    --color-white-alpha-10: var(--white-alpha-10);
+    --color-white-alpha-15: var(--white-alpha-15);
+    --color-white-alpha-20: var(--white-alpha-20);
+    --color-white-alpha-25: var(--white-alpha-25);
+    --color-white-alpha-30: var(--white-alpha-30);
+    --color-white-alpha-40: var(--white-alpha-40);
+    --color-white-alpha-50: var(--white-alpha-50);
+    --color-white-alpha-60: var(--white-alpha-60);
+    --color-white-alpha-70: var(--white-alpha-70);
+    --color-white-alpha-80: var(--white-alpha-80);
+    --color-white-alpha-90: var(--white-alpha-90);
+
+    /* Gradients */
+    --color-gradient-cloud: var(--gradient-cloud);
+    --color-gradient-cloud-reverse: var(--gradient-cloud-reverse);
+    --color-gradient-cloud-radial: var(--gradient-cloud-radial);
+    --color-gradient-success: var(--gradient-success);
+    --color-gradient-error: var(--gradient-error);
+    --color-gradient-warning: var(--gradient-warning);
+    --color-gradient-sunset: var(--gradient-sunset);
+    --color-gradient-ocean: var(--gradient-ocean);
+
+    /* Accent Colors */
+    --color-emerald: var(--emerald-500);
+    --color-emerald-600: var(--emerald-600);
+    --color-teal: var(--teal-500);
+    --color-teal-600: var(--teal-600);
+    --color-cyan: var(--cyan-500);
+    --color-cyan-600: var(--cyan-600);
+    --color-indigo: var(--indigo-500);
+    --color-indigo-600: var(--indigo-600);
+    --color-violet: var(--violet-500);
+    --color-violet-600: var(--violet-600);
+    --color-pink: var(--pink-500);
+    --color-pink-600: var(--pink-600);
+    --color-rose: var(--rose-500);
+    --color-rose-600: var(--rose-600);
+    --color-orange: var(--orange-500);
+    --color-orange-600: var(--orange-600);
+}
+
+/* ============================================================================
+   UTILITY CLASSES FOR COMMON PATTERNS
+   ============================================================================ */
+
+/* Glassmorphism Effect */
+.glass {
+    background: var(--background-glass);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--border-subtle);
+}
+
+.glass-strong {
+    background: var(--white-alpha-20);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--border-subtle);
+}
+
+/* Cloud Theme Gradients */
+.bg-gradient-cloud {
+    background: var(--gradient-cloud);
+}
+
+.bg-gradient-cloud-reverse {
+    background: var(--gradient-cloud-reverse);
+}
+
+.bg-gradient-cloud-radial {
+    background: var(--gradient-cloud-radial);
+}
+
+.bg-gradient-sunset {
+    background: var(--gradient-sunset);
+}
+
+.bg-gradient-ocean {
+    background: var(--gradient-ocean);
+}
+
+/* Text Gradients */
+.text-gradient-cloud {
+    background: var(--gradient-cloud);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+.text-gradient-sunset {
+    background: var(--gradient-sunset);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+.text-gradient-ocean {
+    background: var(--gradient-ocean);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+/* Elevation/Shadow System */
+.elevation-1 {
+    box-shadow: 0 1px 3px var(--black-alpha-10), 0 1px 2px var(--black-alpha-5);
+}
+
+.elevation-2 {
+    box-shadow: 0 4px 6px var(--black-alpha-10), 0 2px 4px var(--black-alpha-5);
+}
+
+.elevation-3 {
+    box-shadow: 0 10px 15px var(--black-alpha-10), 0 4px 6px var(--black-alpha-5);
+}
+
+.elevation-4 {
+    box-shadow: 0 20px 25px var(--black-alpha-10), 0 10px 10px var(--black-alpha-5);
+}
+
+.elevation-5 {
+    box-shadow: 0 25px 50px var(--black-alpha-25);
+}
+
+/* Dark theme shadows */
+.dark .elevation-1 {
+    box-shadow: 0 1px 3px var(--black-alpha-30), 0 1px 2px var(--black-alpha-20);
+}
+
+.dark .elevation-2 {
+    box-shadow: 0 4px 6px var(--black-alpha-30), 0 2px 4px var(--black-alpha-20);
+}
+
+.dark .elevation-3 {
+    box-shadow: 0 10px 15px var(--black-alpha-40), 0 4px 6px var(--black-alpha-30);
+}
+
+.dark .elevation-4 {
+    box-shadow: 0 20px 25px var(--black-alpha-50), 0 10px 10px var(--black-alpha-40);
+}
+
+.dark .elevation-5 {
+    box-shadow: 0 25px 50px var(--black-alpha-60);
+}
+
+/* Interactive States */
+.interactive-base {
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.interactive-base:hover {
+    transform: translateY(-1px);
+}
+
+.interactive-base:active {
+    transform: translateY(0);
+}
+
+/* Focus Styles */
+.focus-ring {
+    outline: none;
+    ring: 2px;
+    ring-color: var(--focus-ring);
+    ring-offset: 2px;
+    ring-offset-color: var(--focus-ring-offset);
+}
+
+/* Brand Specific Components */
+.btn-cloud {
+    background: var(--gradient-cloud);
+    color: var(--content-on-brand);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.btn-cloud:hover {
+    background: var(--gradient-cloud-reverse);
+    transform: translateY(-1px);
+    box-shadow: 0 10px 15px var(--black-alpha-10), 0 4px 6px var(--black-alpha-5);
+}
+
+.btn-cloud:active {
+    transform: translateY(0);
+}
+
+.btn-cloud:focus {
+    outline: none;
+    ring: 2px;
+    ring-color: var(--focus-ring);
+    ring-offset: 2px;
+    ring-offset-color: var(--focus-ring-offset);
+}
+
+/* State Indicators */
+.status-success {
+    background: var(--success-subtle);
+    color: var(--success);
+    border: 1px solid var(--border-success);
+}
+
+.status-error {
+    background: var(--error-subtle);
+    color: var(--error);
+    border: 1px solid var(--border-error);
+}
+
+.status-warning {
+    background: var(--warning-subtle);
+    color: var(--warning);
+    border: 1px solid var(--border-warning);
+}
+
+.status-info {
+    background: var(--info-subtle);
+    color: var(--info);
+    border: 1px solid var(--border-info);
+}
+
+/* Loading States */
+.loading-shimmer {
+    background: linear-gradient(90deg,
+            var(--neutral-200) 0%,
+            var(--neutral-100) 50%,
+            var(--neutral-200) 100%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s ease-in-out infinite;
+}
+
+.dark .loading-shimmer {
+    background: linear-gradient(90deg,
+            var(--neutral-800) 0%,
+            var(--neutral-700) 50%,
+            var(--neutral-800) 100%);
+    background-size: 200% 100%;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+/* Pulse Animation for Loading */
+.pulse-cloud {
+    animation: pulse-cloud 2s ease-in-out infinite;
+}
+
+@keyframes pulse-cloud {
+
+    0%,
+    100% {
+        background: var(--primary-subtle);
+        border-color: var(--border-primary);
+    }
+
+    50% {
+        background: var(--secondary-subtle);
+        border-color: var(--border-secondary);
+    }
+}
+
+/* Selection Styling */
+::selection {
+    background: var(--selection);
+    color: var(--content-primary);
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--surface-secondary);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border-strong);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--interactive);
+}
+
+/* Mobile-first Responsive Breakpoints */
+@media (max-width: 640px) {
+    .mobile-glass {
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+    }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+    :root {
+        --border: var(--neutral-900);
+        --border-subtle: var(--neutral-700);
+        --content-secondary: var(--neutral-800);
+    }
+
+    .dark {
+        --border: var(--white);
+        --border-subtle: var(--neutral-200);
+        --content-secondary: var(--neutral-200);
+    }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+
+    .interactive-base,
+    .btn-cloud,
+    .loading-shimmer,
+    .pulse-cloud {
+        transition: none;
+        animation: none;
+    }
+}
+
+/* Print Styles */
+@media print {
+
+    .glass,
+    .glass-strong {
+        background: var(--white) !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+    }
+
+    .elevation-1,
+    .elevation-2,
+    .elevation-3,
+    .elevation-4,
+    .elevation-5 {
+        box-shadow: none !important;
+    }
 }
