@@ -1,5 +1,4 @@
-// Button.stories.tsx
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/nextjs";
 import { Button } from ".";
 
 
@@ -10,11 +9,11 @@ const meta: Meta<typeof Button> = {
     argTypes: {
         variant: {
             control: "select",
-            options: ["default", "destructive", "outline", "secondary", "ghost", "link"],
+            options: ["primary", "secondary", "success", "destructive", "warning", "info", "accent", "outline", "ghost", "link"],
         },
         size: {
             control: "select",
-            options: ["default", "sm", "lg", "icon"],
+            options: ["xm", "sm", "md", "lg", "xl", "icon"],
         },
         shape: {
             control: "select",
@@ -29,33 +28,15 @@ const meta: Meta<typeof Button> = {
 export default meta;
 type Story = StoryObj<typeof Button>;
 
-// Default button
-export const Default: Story = {
+export const Primary: Story = {
     args: {
-        children: "Click Me",
-        variant: "default",
-        size: "default",
+        children: "Primary",
+        variant: "primary",
+        size: "md",
         shape: "rect",
     },
 };
 
-// Destructive button
-export const Destructive: Story = {
-    args: {
-        children: "Delete",
-        variant: "destructive",
-    },
-};
-
-// Outline button
-export const Outline: Story = {
-    args: {
-        children: "Outline",
-        variant: "outline",
-    },
-};
-
-// Secondary button
 export const Secondary: Story = {
     args: {
         children: "Secondary",
@@ -63,7 +44,48 @@ export const Secondary: Story = {
     },
 };
 
-// Ghost button
+export const Success: Story = {
+    args: {
+        children: "Success",
+        variant: "success",
+    },
+};
+
+export const Destructive: Story = {
+    args: {
+        children: "Delete",
+        variant: "destructive",
+    },
+};
+
+export const Warning: Story = {
+    args: {
+        children: "Warning",
+        variant: "warning",
+    },
+};
+
+export const Info: Story = {
+    args: {
+        children: "Info",
+        variant: "info",
+    },
+};
+
+export const Accent: Story = {
+    args: {
+        children: "Accent",
+        variant: "accent",
+    },
+};
+
+export const Outline: Story = {
+    args: {
+        children: "Outline",
+        variant: "outline",
+    },
+};
+
 export const Ghost: Story = {
     args: {
         children: "Ghost",
@@ -71,7 +93,6 @@ export const Ghost: Story = {
     },
 };
 
-// Link button
 export const Link: Story = {
     args: {
         children: "Go to link",
@@ -79,7 +100,6 @@ export const Link: Story = {
     },
 };
 
-// Pill shaped button
 export const Pill: Story = {
     args: {
         children: "Pill",
