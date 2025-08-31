@@ -1,0 +1,10 @@
+{
+    "name": "@workspace/styles",
+    "version": "1.0.0",
+    "dependencies": {
+        "tailwindcss": "^4.1.11"
+    },
+    "devDependencies": {
+        "@workspace/design-system": "workspace:*"
+    }
+}
