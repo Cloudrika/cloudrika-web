@@ -6,7 +6,7 @@ export default function Page() {
   const { setTheme } = useTheme()
   return (
     <div className="flex items-center justify-center min-h-svh">
-      <div className="flex flex-col items-center justify-center gap-4">
+      <div className="flex flex-col items-center justify-center gap-4 bg-primary-inverse">
         <h1 className="text-2xl font-bold bg-primary-inverse"
           style={{ backgroundColor: 'var(--primary-inverse)' }}
         >Hello World</h1>
