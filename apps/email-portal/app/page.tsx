@@ -22,7 +22,7 @@ export default function Page() {
         </Button>
         <div className="text-shadow-content-primary text-content-secondary text-shadow-2xs">Basic Tailwind</div>
         <div className="text-primary-inverse  "
-          style={{ backgroundColor: 'var(--info)' }}
+
         >Your custom primary</div>
       </div>
       {/* <EditorContent editor={editor} className="w-[80%] bg-gray-300" /> */}

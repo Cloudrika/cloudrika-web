@@ -1,0 +1,21 @@
+@import "tailwindcss";
+@import "@workspace/design-system/design-tokens.css";
+
+@source '../../../apps/**/*.{ts,tsx}';
+@source "../../../components/**/*.{ts,tsx}";
+@source "../../../components/**/*.story.{ts,tsx}";
+@source "../**/*.{ts,tsx}";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@theme {
+    --color-primary: var(--primary);
+    --color-primary-10: var(--primary-10);
+    --color-success: var(--success);
+    --color-error: var(--error);
+
+    --radius-md: 8px;
+    --font-sans: "Inter", sans-serif;
+}

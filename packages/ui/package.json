@@ -36,12 +36,12 @@
     "@types/react-dom": "^19.1.7",
     "@workspace/design-system": "workspace:*",
     "@workspace/eslint-config": "workspace:*",
+    "@workspace/styles": "workspace:*",
     "@workspace/typescript-config": "workspace:*",
     "tailwindcss": "^4.1.11",
     "typescript": "^5.9.2"
   },
   "exports": {
-    "./globals.css": "./src/styles/globals.css",
     "./postcss.config": "./postcss.config.mjs",
     "./lib/*": "./src/lib/*.ts",
     "./components/*": "./src/components/*.tsx",
