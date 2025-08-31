@@ -5,9 +5,9 @@
   "tsx": true,
   "tailwind": {
     "config": "",
-    "css": "../../packages/ui/src/styles/globals.css",
+    "css": "@workspace/styles/globals.css",
     "baseColor": "neutral",
-    "cssVariables": true
+    "cssVariables": false
   },
   "iconLibrary": "lucide",
   "aliases": {

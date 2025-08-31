@@ -3,6 +3,10 @@
   "compilerOptions": {
     "module": "commonjs",
     "moduleResolution": "node",
+    "types": [
+      "react",
+      "react-dom"
+    ],
     "baseUrl": ".",
     "paths": {
       "@workspace/ui/*": [
