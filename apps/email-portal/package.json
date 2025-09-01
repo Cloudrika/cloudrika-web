@@ -38,6 +38,7 @@
     "@workspace/styles": "workspace:*",
     "sass": "^1.90.0",
     "@workspace/design-system": "workspace:*",
+    "@workspace/tailwind-config": "workspace:*",
     "typescript": "^5.9.2"
   }
 }

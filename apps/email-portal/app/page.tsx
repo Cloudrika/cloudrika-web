@@ -3,7 +3,7 @@ import { Button } from "@workspace/ui/components";
 import { useTheme } from "next-themes";
 
 export default function Page() {
-  const { setTheme } = useTheme()
+  const { setTheme, theme } = useTheme()
   return (
     <div className="flex items-center justify-center min-h-svh">
       <div className="flex flex-col items-center justify-center gap-4 bg-primary-inverse">
@@ -17,8 +17,11 @@ export default function Page() {
           onClick={() => {
             setTheme((prev) => prev === "light" ? "dark" : "light")
           }}
+          asChild
         >
-          Click Me
+
+          <div>   Click Me
+          </div>
         </Button>
         <div className="text-shadow-content-primary text-content-secondary text-shadow-2xs">Basic Tailwind</div>
         <div className="text-primary-inverse  "

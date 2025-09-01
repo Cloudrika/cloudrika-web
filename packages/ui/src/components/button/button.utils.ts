@@ -21,6 +21,7 @@ export const BUTTON_SIZES = {
     icon: "size-9",
 }
 
+
 export const BUTTON_SHAPES = {
     rect: "",
     pill: "rounded-full"
