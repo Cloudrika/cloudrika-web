@@ -3,12 +3,11 @@ import { Button } from "@workspace/ui/components";
 import { useTheme } from "next-themes";
 
 export default function Page() {
-  const { setTheme, theme } = useTheme()
+  const { setTheme } = useTheme()
   return (
-    <div className="flex items-center justify-center min-h-svh">
+    <div className="flex items-center justify-center min-h-svh m-auto">
       <div className="flex flex-col items-center justify-center gap-4 bg-primary-inverse">
-        <h1 className="text-2xl font-bold bg-primary-inverse"
-          style={{ backgroundColor: 'var(--primary-inverse)' }}
+        <h1 className="text-2xl font-bold bg-surface-secondary"
         >Hello World</h1>
         <Button
           shape="rect"
@@ -28,7 +27,6 @@ export default function Page() {
 
         >Your custom primary</div>
       </div>
-      {/* <EditorContent editor={editor} className="w-[80%] bg-gray-300" /> */}
     </div>
   )
 }

@@ -1,4 +1,4 @@
-import "@workspace/styles/globals.css"
+import "../packages/styles/globals.css"
 import type { Preview } from '@storybook/nextjs'
 const preview: Preview = {
   parameters: {

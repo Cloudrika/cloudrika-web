@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
 import { Button } from ".";
 import { BUTTON_SHAPES, BUTTON_SIZES, BUTTON_VARIANTS } from "./button.utils";
+import { Divide } from "lucide-react";
 
 
 const meta: Meta<typeof Button> = {
@@ -23,7 +24,7 @@ const meta: Meta<typeof Button> = {
         asChild: {
             control: "boolean",
         },
-    },
+    }
 };
 
 export default meta;
@@ -46,13 +47,6 @@ export const Secondary: Story = {
     },
 };
 
-export const Success: Story = {
-    args: {
-        children: "Success",
-        variant: "success",
-    },
-};
-
 export const Destructive: Story = {
     args: {
         children: "Delete",
@@ -60,24 +54,10 @@ export const Destructive: Story = {
     },
 };
 
-export const Warning: Story = {
-    args: {
-        children: "Warning",
-        variant: "warning",
-    },
-};
-
 export const Info: Story = {
     args: {
-        children: "Info",
-        variant: "info",
-    },
-};
-
-export const Accent: Story = {
-    args: {
-        children: "Accent",
-        variant: "accent",
+        children: "",
+        variant: "secondary",
     },
 };
 
