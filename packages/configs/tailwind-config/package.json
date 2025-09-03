@@ -2,6 +2,8 @@
     "name": "@workspace/tailwind-config",
     "version": "1.0.0",
     "dependencies": {
-        "tailwindcss": "^4.1.11"
+        "tailwind-animate": "^0.2.10",
+        "tailwindcss": "^4.1.11",
+        "tailwindcss-animate": "^1.0.7"
     }
 }
