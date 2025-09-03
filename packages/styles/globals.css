@@ -5,9 +5,8 @@
 @source "../../../components/**/*.{ts,tsx}";
 @source "../../../components/**/*.story.{ts,tsx}";
 @source "../**/*.{ts,tsx}";
+@source "../**/*.story.{ts,tsx}";
 @source "../../../.storybook/**/*.ts"
-@tailwind base;
-@tailwind components;
 @tailwind utilities;
 
 @theme {
@@ -103,11 +102,24 @@
     /* Typography */
     --font-sans: "Inter", sans-serif;
 
-    /* Radius */
+    /* Sidebar Colors */
+    --sidebar: var(--color-surface-primary);
+    --sidebar-foreground: var(--color-content-primary);
+    --sidebar-border: var(--color-neutral-300);
+    --sidebar-ring: var(--color-border-primary);
+    --sidebar-accent: var(--color-primary-foreground);
+    --sidebar-accent-foreground: var(--color-primary-subtle);
+
+    /* Sidebar Dimensions */
+    --sidebar-width: 500px;
+    --sidebar-width-icon: 24px;
+
+    /* Radius Dimensions */
     --radius-xs: 2px;
     --radius-sm: 4px;
     --radius-md: 8px;
     --radius-lg: 12px;
     --radius-xl: 16px;
     --radius-2xl: 20px;
+
 }
